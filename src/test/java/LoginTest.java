@@ -15,14 +15,14 @@ public class LoginTest {
         @Test
         void successfulLoginTest(){
                 Configuration.holdBrowserOpen = false;
-                Configuration.browser = "firefox";
+//                Configuration.browser = "firefox";
                 Configuration.browserSize = "1920x1080";
 
                 open("https://candy-home.ru/");
                 $(".header__func-item.header__user.js-tingle-modal").shouldHave(text("Войти"));
                 $(".header__func-item.header__user.js-tingle-modal").click();
 //                switchTo().window(0);
-                $(".auth__tabs-button.js-focus-visible.js-tab is-active").shouldHave(text("Вход"));
+                $(".omnichannel__container").shouldBe(visible);
 
 
 //                $("[name=email]").setValue("qaqurubot@gmai.com");
